@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br"> 
+<head>
+	<meta charset="utf-8">
+	<title>HTML 5 Input Types</title>
+</head>
+<body>
+	<header>
+		<h1>HTML 5 Input Types</h1>
+	</header>
+	<section>
+		<form>
+			<div class="form-group">
+				<label>Color</label>
+				<input type="color">
+			</div>
+			<div class="form-group">
+				<label>Date</label>
+				<input type="date">
+			</div>
+			<div class="form-group">
+				<label>DateTime</label>
+				<input type="datetime-local">
+			</div>
+			<div class="form-group">
+				<label>Email</label>
+				<input type="email">
+			</div>
+			<div class="form-group">
+				<label>Month</label>
+				<input type="month">
+			</div>
+			<div class="form-group">
+				<label>Number</label>
+				<input type="number" min="0" max="100" step="10">
+			</div>
+			<div class="form-group">
+				<label>Range</label>
+				<input type="text" id="textInput">
+				<input type="range" min="0" max="10" step="2" onchange="updateTextInput(this.value)">
+				<script>
+					function updateTextInput(num) {
+						document.getElementById("textInput").value = num;
+					}
+				</script>
+			<div class="form-group">
+				<label>Search</label>
+				<input type="search">
+			</div>
+			<div class="form-group">
+				<label>Time</label>
+				<input type="time">
+			</div>
+			<div class="form-group">
+				<label>Url</label>
+				<input type="url">
+			</div>
+			<div class="form-group">
+				<label>Week</label>
+				<input type="week">
+			</div>
+			<div class="form-group">
+				<label>List</label>
+				<input list="codes" name="code" title="Erro customizado" required>
+				<datalist id="codes">
+					<option value="Javascript"></option>
+					<option value="PHP"></option>
+					<option value="Java"></option>
+					<option value="Node"></option>
+					<option value="C#"></option>
+				</datalist>
+			</div>
+			<button>Submit</button>
+		</form>
+	</section>
+	<section>
+		<h1>Output</h1>
+		<form oninput="x.value = parseInt(a.value) + parseInt(b.value), y.value = parseInt(a.value)">
+			0
+			<input type="range" id="a" name="a" value="50" min="0" max="100">
+			100
+			+
+			<input type="text" name="b" value="66">
+			<output name="x"></output>
+			<output name="y"></output>
+		</form>
+	</section>
+	<section>
+		<h1>Autocomplete</h1>
+		<form>
+			<div class="form-group">
+				<input type="text" name="fname" placeholder="First Name">
+			</div>
+			<div class="form-group">
+				<input type="text" name="lname" placeholder="Last Name">
+			</div>
+			<div class="form-group">
+				<input type="email" name="email" placeholder="Email" autocomplete="off">
+			</div>
+			<button>Submit</button>
+		</form>
+	</section>
+	<section>
+		<h1>The novalidate Attribute and Autofocus</h1>
+		<form novalidate>
+			<div class="form-group">
+				<input type="text" name="fname" placeholder="First Name" required autofocus>
+			</div>
+			<div class="form-group">
+				<input type="text" name="lname" placeholder="Last Name" required>
+			</div>
+			<div class="form-group">
+				<input type="email" name="email" placeholder="Email" autocomplete="off">
+			</div>
+			<button>Submit</button>
+		</form>
+	</section>
+	<section>
+		<h1>The form Attribute:</h1>
+		<form id="form1" method="get">
+			<div class="form-group">
+				<input type="text" name="fname" placeholder="First Name" required>
+			</div>
+			<div class="form-group">
+				<input type="text" name="lname" placeholder="Last Name" required>
+			</div>
+			<div class="form-group">
+				<input type="email" name="email" placeholder="Email">
+			</div>
+			<button>Submit</button>
+			<button formnovalidate>Submit Novalidate</button>
+			<button formnovalidate formmethod="post">Submit Method</button>
+			<button formnovalidate formaction="post.php">Submit Action</button>
+		</form>
+		<input type="color" name="color" form="form1">
+	</section>
+</body>
+</html> 
